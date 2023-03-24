@@ -26,12 +26,12 @@ document.querySelector('.check').addEventListener('click', function () {
   // When there is no input
   if (!guess) {
     // document.querySelector('.message').textContent = '⛔️ No number!';
-    displayMessage('⛔️ No number!');
+    displayMessage('⛔️ Escreva um número!');
 
     // When player wins
   } else if (guess === secretNumber) {
     // document.querySelector('.message').textContent = '🎉 Correct Number!';
-    displayMessage('🎉 Correct Number!');
+    displayMessage('🎉 Acertou!');
     document.querySelector('.number').textContent = secretNumber;
 
     document.querySelector('body').style.backgroundColor = '#60b347';
@@ -47,12 +47,14 @@ document.querySelector('.check').addEventListener('click', function () {
     if (score > 1) {
       // document.querySelector('.message').textContent =
       // guess > secretNumber ? '📈 Too high!' : '📉 Too low!';
-      displayMessage(guess > secretNumber ? '📈 Too high!' : '📉 Too low!');
+      displayMessage(
+        guess > secretNumber ? '📈 Muito alto!' : '📉 Muito baixo!'
+      );
       score--;
       document.querySelector('.score').textContent = score;
     } else {
       // document.querySelector('.message').textContent = '💥 You lost the game!';
-      displayMessage('💥 You lost the game!');
+      displayMessage('💥 Você perdeu!');
       document.querySelector('.score').textContent = 0;
     }
   }
